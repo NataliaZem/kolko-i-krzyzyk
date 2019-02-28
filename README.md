@@ -1,2 +1,2 @@
 # kolko-i-krzyzyk
-check life: natalia-zemla.pl
+check life: http://natalia-zemla.pl
