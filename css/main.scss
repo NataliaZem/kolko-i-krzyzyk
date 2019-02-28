@@ -1,0 +1,274 @@
+* {margin: 0; padding: 0;box-sizing: border-box}
+
+body { 
+    background-color: #b7caca ;
+    font-family: 'Lato', sans-serif;
+    color: #26252b;
+
+    #again {
+        margin-top: 10px;
+        padding: 5px 10px;
+        border: 2px solid #59585e;
+        font-size: 20px;
+        font-family: 'Pacifico', cursive;
+    }
+
+    .sharp {
+        font-size: 38px;
+        cursor: pointer;
+    }
+    .circle {
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    .board, .about, ul, .score, .players {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .board {
+        margin: 30px 0;
+        padding: 20px 10px;
+        
+        .about, .game, .score {
+            width: 100%;
+        }
+/* 1 - foto&comment */
+        .about {
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+
+            .text {
+                background-color: #f5d8ad;
+                font-family: 'Caveat', cursive;
+                width: 50%;
+                border: 2px solid #b1a671;
+                text-align: center;
+                padding: 10px 7px;
+
+                span {
+                    font-family: 'Pacifico', cursive;
+                    font-size: 12px;
+                    top: 0;
+                    left: 0;
+                }
+            }
+
+            .foto {
+                background-image: url('../assets/img/myfoto.jpg');
+                background-position: center;
+                background-size: cover;
+                width: 125px;
+                height: 125px;
+                border-radius: 50%;
+                border: 3px solid #be865c;
+            }
+        }
+/* 2 - board */
+        .game {
+            margin: 10px 0;
+
+            ul {
+                list-style-type: none;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+
+                li {
+                    width: 30vw;
+                    height: 30vw;
+                    border: 2px solid #59585e;
+                    font-size: 60px;
+                    position: relative;
+                    background-color: transparent;
+                    
+                    .wall {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background-color: transparent;
+                    }
+                }
+                .behind {
+                    z-index: -1;
+                }
+            }
+        }
+/* 3 - score */
+        .score {
+            width: 300px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            font-weight: 800;
+
+            .playerX, .playerN {
+                background-color: #f5d8ad;
+                color: #be865c;
+                font-weight: 600;
+                width: 100px;
+                height: 30px;   
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 3px solid #b1a671;
+                margin: 10px; 
+            }
+        }
+    }
+}
+
+.sleep {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: .7;
+   
+}
+.callbox {
+    width: 270px;
+    text-align: center;
+    padding: 15px 15px;
+    opacity: 1;
+    z-index: 1;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f5d8ad;
+    border: 4px solid #be865c;
+    border-radius: 5px;
+
+    input[type=text] {
+        background-color: #f5d8ad;
+        border: 2px solid #59585e;
+        padding: 5px 10px;
+        margin: 3px;
+        width: 150px;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    h1 {
+        margin-bottom: 20px;
+        font-size: 25px;
+        font-family: 'Pacifico', cursive;
+    }
+    h2 {
+        margin-bottom: 10px;
+    }
+    p {
+        margin-bottom: 10px;
+    }
+    .options {
+        width: 40%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 768px){
+    body {
+        .board {
+            .about {
+                margin-bottom: 30px;
+                .text {
+                    font-size: 2rem;
+                    
+                    span {
+                        font-size: 24px;
+                    }
+                }
+                .foto {
+                    width: 200px;
+                    height: 200px;
+                }
+            }
+            .game {    
+                ul {    
+                    li {
+                        width: 25vw;
+                        height: 25vw;
+                        font-size: 120px;
+                    }
+                }
+            }
+            .score {
+                width: 500px;  
+                font-size: 2rem;  
+                .playerX, .playerN {
+                    font-weight: 600;
+                    width: 200px;
+                    height: 60px;   
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1000px){
+    body {
+        .board {
+            margin: 0;
+            margin-top: 20px;
+            padding: 0;
+            .about {
+                width: 30vw;
+                margin-bottom: 10px;
+                justify-content: space-between;
+                .text {
+                    font-size: 1.5rem;
+                    
+                    span {
+                        font-size: 20px;
+                    }
+                }
+                .foto {
+                    width: 150px;
+                    height: 150px;
+                }
+            }
+            .game {    
+                ul {    
+                    width: 35vw;
+                    margin: 0 auto;
+                    li {
+                        width: 10vw;
+                        height: 10vw;
+                        font-size: 100px;
+                    }
+                }
+            }
+            .score {
+                width: 500px;  
+                font-size: 2rem;  
+                .playerX, .playerN {
+                    font-weight: 600;
+                    width: 200px;
+                    height: 60px;   
+                }
+            }
+        }
+    }
+}
+
+.biggerLetters {
+    font-size: 25px;
+    font-weight: 600;
+}
+.hide {
+    display: none;
+}

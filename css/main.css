@@ -1,0 +1,322 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #b7caca;
+  font-family: 'Lato', sans-serif;
+  color: #26252b;
+}
+
+body #again {
+  margin-top: 10px;
+  padding: 5px 10px;
+  border: 2px solid #59585e;
+  font-size: 20px;
+  font-family: 'Pacifico', cursive;
+}
+
+body .sharp {
+  font-size: 38px;
+  cursor: pointer;
+}
+
+body .circle {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+body .board, body .about, body ul, body .score, body .players {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .board {
+  margin: 30px 0;
+  padding: 20px 10px;
+  /* 1 - foto&comment */
+  /* 2 - board */
+  /* 3 - score */
+}
+
+body .board .about, body .board .game, body .board .score {
+  width: 100%;
+}
+
+body .board .about {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .board .about .text {
+  background-color: #f5d8ad;
+  font-family: 'Caveat', cursive;
+  width: 50%;
+  border: 2px solid #b1a671;
+  text-align: center;
+  padding: 10px 7px;
+}
+
+body .board .about .text span {
+  font-family: 'Pacifico', cursive;
+  font-size: 12px;
+  top: 0;
+  left: 0;
+}
+
+body .board .about .foto {
+  background-image: url("../assets/img/myfoto.jpg");
+  background-position: center;
+  background-size: cover;
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  border: 3px solid #be865c;
+}
+
+body .board .game {
+  margin: 10px 0;
+}
+
+body .board .game ul {
+  list-style-type: none;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .board .game ul li {
+  width: 30vw;
+  height: 30vw;
+  border: 2px solid #59585e;
+  font-size: 60px;
+  position: relative;
+  background-color: transparent;
+}
+
+body .board .game ul li .wall {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+}
+
+body .board .game ul .behind {
+  z-index: -1;
+}
+
+body .board .score {
+  width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-weight: 800;
+}
+
+body .board .score .playerX, body .board .score .playerN {
+  background-color: #f5d8ad;
+  color: #be865c;
+  font-weight: 600;
+  width: 100px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 3px solid #b1a671;
+  margin: 10px;
+}
+
+.sleep {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  opacity: .7;
+}
+
+.callbox {
+  width: 270px;
+  text-align: center;
+  padding: 15px 15px;
+  opacity: 1;
+  z-index: 1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #f5d8ad;
+  border: 4px solid #be865c;
+  border-radius: 5px;
+}
+
+.callbox input[type=text] {
+  background-color: #f5d8ad;
+  border: 2px solid #59585e;
+  padding: 5px 10px;
+  margin: 3px;
+  width: 150px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.callbox h1 {
+  margin-bottom: 20px;
+  font-size: 25px;
+  font-family: 'Pacifico', cursive;
+}
+
+.callbox h2 {
+  margin-bottom: 10px;
+}
+
+.callbox p {
+  margin-bottom: 10px;
+}
+
+.callbox .options {
+  width: 40%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  body .board .about {
+    margin-bottom: 30px;
+  }
+  body .board .about .text {
+    font-size: 2rem;
+  }
+  body .board .about .text span {
+    font-size: 24px;
+  }
+  body .board .about .foto {
+    width: 200px;
+    height: 200px;
+  }
+  body .board .game ul li {
+    width: 25vw;
+    height: 25vw;
+    font-size: 120px;
+  }
+  body .board .score {
+    width: 500px;
+    font-size: 2rem;
+  }
+  body .board .score .playerX, body .board .score .playerN {
+    font-weight: 600;
+    width: 200px;
+    height: 60px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  body .board {
+    margin: 0;
+    margin-top: 20px;
+    padding: 0;
+  }
+  body .board .about {
+    width: 30vw;
+    margin-bottom: 10px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  body .board .about .text {
+    font-size: 1.5rem;
+  }
+  body .board .about .text span {
+    font-size: 20px;
+  }
+  body .board .about .foto {
+    width: 150px;
+    height: 150px;
+  }
+  body .board .game ul {
+    width: 35vw;
+    margin: 0 auto;
+  }
+  body .board .game ul li {
+    width: 10vw;
+    height: 10vw;
+    font-size: 100px;
+  }
+  body .board .score {
+    width: 500px;
+    font-size: 2rem;
+  }
+  body .board .score .playerX, body .board .score .playerN {
+    font-weight: 600;
+    width: 200px;
+    height: 60px;
+  }
+}
+
+.biggerLetters {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.hide {
+  display: none;
+}
+/*# sourceMappingURL=main.css.map */

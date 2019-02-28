@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tic Tac Toe</title>
+    <link href="https://fonts.googleapis.com/css?family=Caveat|Lato:400,700|Pacifico&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div id="result" class="callbox">
+        <h2>Zagraj ze mną!</h2>       
+        <h1>Kółko & Krzyżyk</h1>
+        Podaj swoje imię: <input type="text" id="playerName" value="Player">
+        <p>Wybierz czym grasz:</p>
+        <div class="options">
+            <i class="far fa-circle circle" onclick="playO(); hideCallbox(); reveal(); playerNameDisplay();"></i>
+            <i class="fas fa-times sharp" onclick="playX(); hideCallbox(); reveal(); playerNameDisplay();"></i>
+        </div>
+    </div>
+    <button id="again" onclick="playAgain();" class="hide">Zagraj jeszcze raz!</button>
+    <div class="sleep"></div>
+
+    <div class="board">
+        <div class="about">
+            <div class="text">Witaj w mojej grze<br><span>Kółko & Krzyżyk</span>!<br>Spróbuj ze mną przegrać...</div>
+            <div class="foto"></div>
+        </div>
+        <div class="game">
+            <ul>
+                <li class="behind"><div id="n1" class="wall" onclick="insertTokenP(this); getId(this); nataliaMove();"></div></li>
+                <li class="behind"><div id="n2" class="wall" onclick="insertTokenP(this); getId(this); nataliaMove();"></div></li>
+                <li class="behind"><div id="n3" class="wall" onclick="insertTokenP(this); getId(this); nataliaMove();"></div></li>
+                <li class="behind"><div id="n4" class="wall" onclick="insertTokenP(this); getId(this); nataliaMove();"></div></li>
+                <li class="behind"><div id="n5" class="wall" onclick="insertTokenP(this); getId(this); nataliaMove();"></div></li>
+                <li class="behind"><div id="n6" class="wall" onclick="insertTokenP(this); getId(this); nataliaMove();"></div></li>
+                <li class="behind"><div id="n7" class="wall" onclick="insertTokenP(this); getId(this); nataliaMove();"></div></li>
+                <li class="behind"><div id="n8" class="wall" onclick="insertTokenP(this); getId(this); nataliaMove();"></div></li>
+                <li class="behind"><div id="n9" class="wall" onclick="insertTokenP(this); getId(this); nataliaMove();"></div></li>
+            </ul>
+        </div>
+        <div class="score">
+            <span id="placeForPlayerName" class="playerX">Player</span> vs <span class="playerN">Natalia</span>
+        </div>
+    </div>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+</html>
