@@ -1,2 +1,2 @@
-# kolko-i-krzyzyk
-check life: http://natalia-zemla.pl
+# Tic Tac Toe
+check life: https://nataliazem.github.io/TicTacToe
